@@ -411,7 +411,13 @@ class StateMachine(smach.container.Container):
         return [str(self._current_label)]
 
     def get_initial_states(self):
-        return [str(self._initial_state_label)]
+        return [str(self._initial_state_label)]    
+
+    def get_current_transitions(self):
+        return [str(self._current_transitions)]
+
+    def get_current_outcome(self):
+        return [str(self._current_outcome)]
 
     def get_internal_edges(self):
         int_edges = []

@@ -37,7 +37,8 @@ __all__ = ['set_preempt_handler',
         'SimpleActionState',
         'ServiceState',
         'MonitorState',
-        'ConditionState']
+        'ConditionState',
+        'TransitionListener', 'TransitionPublisher', 'TransitionListenerState']
 
 # Setup smach-ros interface
 smach.set_loggers(
@@ -54,6 +55,7 @@ from util import set_preempt_handler
 ### Top-level Containers / Wrappers
 from action_server_wrapper import ActionServerWrapper
 from introspection import IntrospectionClient, IntrospectionServer
+from transition_status import TransitionPublisher, TransitionListener, TransitionListenerState
 
 ### State Classes
 from simple_action_state import SimpleActionState
