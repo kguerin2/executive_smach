@@ -14,7 +14,7 @@ class Foo(TransitionListenerState):
   def execute(self, userdata):
     rospy.loginfo('Subscriber Machine: Executing state FOO_S')
     if 'FINISH_P' in self.transition_listener_.get_active_states():
-      if 'done' in self.transition_listener_.get_active_transitions(): 
+      if 'to_finish' in self.transition_listener_.get_active_outcomes(): 
         return 'finish'
       else:
         rospy.sleep(.5)

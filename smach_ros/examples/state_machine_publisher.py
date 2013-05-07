@@ -16,10 +16,10 @@ class Foo(smach.State):
     rospy.loginfo('Publisher Machine: Executing state FOO_P')
     if self.counter < 3:
       self.counter += 1
-      rospy.sleep(2)
+      rospy.sleep(1)
       return 'to_bar'
     else:
-      rospy.sleep(2)
+      rospy.sleep(1)
       return 'to_finish'
 
 # define state Bar
@@ -29,7 +29,7 @@ class Bar(smach.State):
 
   def execute(self, userdata):
     rospy.loginfo('Publisher Machine: Executing state BAR_P')
-    rospy.sleep(2)
+    rospy.sleep(1)
     return 'to_foo'
 
 

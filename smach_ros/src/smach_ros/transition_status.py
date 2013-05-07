@@ -37,7 +37,6 @@ class TransitionListenerState(smach.State):
     smach.State.__init__(self, outcomes)
     self.transition_listener_ = transition_listener
 
-
 #####
 class TransitionPublisher:
   def __init__(self,name,state_machine):
