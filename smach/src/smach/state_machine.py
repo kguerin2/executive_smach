@@ -186,13 +186,13 @@ class StateMachine(smach.container.Container):
             self._current_label = state_label
             self._current_state = self._states[state_label]
             self._current_transitions = self._transitions[state_label]
-            self._current_outcome = None
+            # self._current_outcome = None
         else:
             # Store the current label and states 
             self._current_label = None
             self._current_state = None
             self._current_transitions = None
-            self._current_outcome = None
+            # self._current_outcome = None
 
     def _update_once(self):
         """Method that updates the state machine once.
@@ -262,6 +262,9 @@ class StateMachine(smach.container.Container):
         
         # Set the transition target
         transition_target = self._current_transitions[outcome]
+
+        # Set the current outcome
+        self._current_outcome = outcome
 
         # Check if the transition target is a state in this state machine, or an outcome of this state machine
         if transition_target in self._states:
